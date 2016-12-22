@@ -183,7 +183,8 @@ class ossec::server (
     require => Package[$ossec::params::server_package]
   }
 
-
-  Ossec::Agentkey<<| |>>
+  if ( $manage_client_keys == true ) {
+    Ossec::Agentkey<<| |>>
+  }
 
 }
